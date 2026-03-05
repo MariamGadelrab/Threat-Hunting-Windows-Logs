@@ -1,0 +1,52 @@
+timestamp_utc,host,user,event_id,log_channel,source_ip,process_name,command_line,outcome,details
+2024-03-04 08:15:23,WKS-001,john.smith,4624,Security,10.10.1.50,winlogon.exe,,Success,Normal user logon - Logon Type 2
+2024-03-04 08:16:45,WKS-001,john.smith,4688,Security,,explorer.exe,C:\Windows\explorer.exe,Success,Normal process creation
+2024-03-04 08:18:12,WKS-002,sarah.jones,4624,Security,10.10.1.51,winlogon.exe,,Success,Normal user logon - Logon Type 2
+2024-03-04 08:20:34,WKS-002,sarah.jones,4688,Security,,outlook.exe,C:\Program Files\Microsoft Office\Outlook.exe,Success,Normal process creation
+2024-03-04 08:25:11,DC-01,SYSTEM,4688,Security,,svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs,Success,Normal system process
+2024-03-04 08:30:45,WKS-003,mike.wilson,4624,Security,10.10.1.52,winlogon.exe,,Success,Normal user logon - Logon Type 2
+2024-03-04 08:32:18,WKS-003,mike.wilson,4688,Security,,chrome.exe,C:\Program Files\Google\Chrome\chrome.exe,Success,Normal process creation
+2024-03-04 08:45:22,WKS-001,john.smith,4688,Security,,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,Success,Normal PowerShell usage
+2024-03-04 09:12:34,DC-01,admin,4624,Security,10.10.1.100,winlogon.exe,,Success,Admin logon to domain controller
+2024-03-04 09:15:47,DC-01,admin,4672,Security,10.10.1.100,,,Success,Special privileges assigned to admin
+2024-03-04 09:18:23,WKS-002,sarah.jones,4688,Security,,excel.exe,C:\Program Files\Microsoft Office\Excel.exe,Success,Normal process creation
+2024-03-04 09:25:11,WKS-001,john.smith,4769,Security,10.10.1.50,,,Success,Kerberos service ticket request - Normal
+2024-03-04 09:30:45,WKS-003,mike.wilson,4688,Security,,teams.exe,C:\Program Files\Microsoft Teams\Teams.exe,Success,Normal process creation
+2024-03-04 10:05:12,WKS-001,john.smith,4625,Security,192.168.100.50,,,Failure,Failed logon attempt - Wrong password
+2024-03-04 10:15:34,WKS-002,sarah.jones,4624,Security,10.10.1.51,winlogon.exe,,Success,Normal user activity
+2024-03-04 10:22:18,DC-01,SYSTEM,4688,Security,,lsass.exe,C:\Windows\System32\lsass.exe,Success,Normal LSASS process
+2024-03-04 10:45:23,WKS-001,contractor_temp,4624,Security,203.0.113.45,winlogon.exe,,Success,External contractor VPN logon - Logon Type 10
+2024-03-04 10:46:15,WKS-001,contractor_temp,4672,Security,203.0.113.45,,,Success,Special privileges assigned
+2024-03-04 10:47:32,WKS-001,contractor_temp,4688,Security,,powershell.exe,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass,Success,PowerShell with bypass policy
+2024-03-04 10:48:45,WKS-001,contractor_temp,4688,Security,,rundll32.exe,rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump,Success,Suspicious rundll32 usage
+2024-03-04 10:49:12,WKS-001,contractor_temp,4656,Security,,lsass.exe,,Success,Handle requested to LSASS process
+2024-03-04 10:49:45,WKS-001,contractor_temp,4688,Security,,procdump.exe,procdump.exe -ma lsass.exe lsass.dmp,Success,LSASS memory dump attempt
+2024-03-04 10:50:23,WKS-001,contractor_temp,4663,Security,,lsass.exe,,Success,Access granted to LSASS memory
+2024-03-04 10:52:34,WKS-001,contractor_temp,4688,Security,,cmd.exe,cmd.exe /c net user administrator /domain,Success,Domain enumeration command
+2024-03-04 10:53:18,WKS-001,contractor_temp,4688,Security,,net.exe,net.exe user administrator /domain,Success,Domain user enumeration
+2024-03-04 10:54:45,WKS-001,contractor_temp,4688,Security,,nltest.exe,nltest.exe /dclist:,Success,Domain controller enumeration
+2024-03-04 10:56:12,WKS-001,contractor_temp,4648,Security,203.0.113.45,runas.exe,runas.exe /user:admin cmd.exe,Success,Explicit credential usage detected
+2024-03-04 10:57:34,WKS-001,admin,4624,Security,203.0.113.45,winlogon.exe,,Success,Suspicious admin logon from external IP - Logon Type 9
+2024-03-04 10:58:22,WKS-001,admin,4672,Security,203.0.113.45,,,Success,Admin privileges assigned from suspicious source
+2024-03-04 11:00:15,WKS-002,admin,4624,Security,10.10.1.50,winlogon.exe,,Success,Lateral movement - Admin logon from WKS-001 - Logon Type 3
+2024-03-04 11:00:45,WKS-002,admin,4672,Security,10.10.1.50,,,Success,Special privileges assigned during lateral movement
+2024-03-04 11:01:23,WKS-002,admin,4688,Security,,powershell.exe,powershell.exe -NoProfile -Command IEX,Success,Suspicious PowerShell on WKS-002
+2024-03-04 11:02:12,WKS-002,admin,4688,Security,,cmd.exe,cmd.exe /c whoami /priv,Success,Privilege enumeration
+2024-03-04 11:03:34,WKS-002,admin,4769,Security,10.10.1.50,,,Success,Kerberos ticket request - RC4 encryption (Pass-the-Hash indicator)
+2024-03-04 11:04:18,WKS-002,admin,4688,Security,,reg.exe,reg.exe save HKLM\SAM sam.save,Success,SAM database export attempt
+2024-03-04 11:05:45,WKS-002,admin,4663,Security,,lsass.exe,,Success,LSASS access from lateral movement
+2024-03-04 11:07:23,WKS-003,admin,4624,Security,10.10.1.51,winlogon.exe,,Success,Lateral movement - Admin logon from WKS-002 - Logon Type 3
+2024-03-04 11:07:56,WKS-003,admin,4672,Security,10.10.1.51,,,Success,Special privileges assigned during lateral movement
+2024-03-04 11:08:34,WKS-003,admin,4688,Security,,powershell.exe,powershell.exe -enc JABzAD0ATgBlAHcALQBPAGIAagBlAGMAdAA,Success,Base64 encoded PowerShell command
+2024-03-04 11:09:12,WKS-003,admin,4688,Security,,wmic.exe,wmic.exe process call create powershell.exe,Success,WMIC remote execution
+2024-03-04 11:10:45,DC-01,admin,4624,Security,10.10.1.52,winlogon.exe,,Success,Suspicious admin logon to DC from WKS-003 - Logon Type 3
+2024-03-04 11:11:23,DC-01,admin,4672,Security,10.10.1.52,,,Success,Admin privileges on domain controller
+2024-03-04 11:12:34,DC-01,admin,4688,Security,,ntdsutil.exe,ntdsutil.exe "ac i ntds" ifm "create full c:\temp" q q,Success,NTDS database extraction attempt
+2024-03-04 11:13:18,DC-01,admin,4662,Security,,,,Success,Operation performed on AD object
+2024-03-04 11:15:45,WKS-001,john.smith,4688,Security,,notepad.exe,C:\Windows\System32\notepad.exe,Success,Normal user activity
+2024-03-04 11:20:23,WKS-002,sarah.jones,4688,Security,,word.exe,C:\Program Files\Microsoft Office\Word.exe,Success,Normal user activity
+2024-03-04 11:25:34,WKS-003,mike.wilson,4769,Security,10.10.1.52,,,Success,Normal Kerberos ticket request
+2024-03-04 11:30:12,DC-01,SYSTEM,4688,Security,,svchost.exe,C:\Windows\System32\svchost.exe,Success,Normal system process
+2024-03-04 11:35:45,WKS-001,contractor_temp,4634,Security,203.0.113.45,,,Success,Logoff event
+2024-03-04 11:40:23,WKS-002,admin,4634,Security,10.10.1.50,,,Success,Admin logoff from WKS-002
+2024-03-04 11:45:18,WKS-003,admin,4634,Security,10.10.1.51,,,Success,Admin logoff from WKS-003
