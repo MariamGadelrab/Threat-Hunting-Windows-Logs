@@ -317,7 +317,7 @@ This project is created for educational and portfolio purposes.
 
 ## Author
 
-Mariam Gadelrab
+Mariam Gadelrab  
 Cybersecurity / SOC Engineer 
 
 ## Contact
