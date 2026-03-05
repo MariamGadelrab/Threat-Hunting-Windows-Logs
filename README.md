@@ -317,7 +317,8 @@ This project is created for educational and portfolio purposes.
 
 ## Author
 
-Senior SOC Analyst - Cybersecurity Professional
+Mariam Gadelrab
+Cybersecurity / SOC Analyst Portfolio Project
 
 ## Contact
 
